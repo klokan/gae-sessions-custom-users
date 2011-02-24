@@ -1,0 +1,20 @@
+<html>
+<head><title>Login page</title></head>
+<body>
+
+{% if msg %}<div style="color:red">{{ msg }}</div>{% endif %}
+
+<h1>Login</h1>
+
+<div>
+	<form action="/password_check" method="post">
+	  Email address: <input type="text" name="email" /><br />
+	  Password: <input type="password" name="pas" /><br />
+	  <input type="submit" value="Login" />
+	</form>
+</div>
+
+Type any email address and password. This will create a new account. After logout you have to use the same password again to login.
+
+</body>
+</html>

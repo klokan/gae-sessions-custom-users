@@ -1,0 +1,31 @@
+<html>
+<head><title>Custom logins on GAE</title></head>
+<body>
+
+{% if msg %}<div style="color:red">{{ msg }}</div>{% endif %}
+
+<h1>Test of custom logins on GAE</h1>
+
+This is the test of custom logins in GAE
+
+<div>
+{% if user %}
+  <p>Thanks for signing on {{ user.display_name }}.
+  You can <a href="/logout">logout here</a>.</p>
+
+  <table border="1">
+    <tr><th colspan="2"># of Visits</th></tr>
+    <tr><th>Prior to this sign-on</td> <td>{{ user.past_view_count }}</td></tr>
+    <tr><th>During this sign-on</td>   <td>{{ num_now }}</td></tr>
+  </table>
+{% else %}
+
+	<p>
+	Nobody is logged in this moment... {{ num_now }}
+	</p>
+	
+{% endif %}
+</div>
+
+</body>
+</html>
